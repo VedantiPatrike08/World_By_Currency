@@ -1,0 +1,166 @@
+body {
+    background-color: #fffaf0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 50px;
+}
+
+.formContainer {
+display: flex;
+align-items: center;
+
+}
+
+.searchContainer {
+position: relative;
+display: flex;
+align-items: center;
+
+}
+
+.searchLogo {
+position: absolute;
+left: 10px;
+width: 20px; 
+height: auto; 
+}
+
+.inputField {
+width: 300px;
+padding: 10px;
+padding-left: 40px; 
+margin-right: 10px;
+
+border: 1px solid #1a1b1a; 
+border-radius: 5px; 
+background-color: #fff; 
+}
+.inputField:focus {
+    font-weight: bold;
+}
+
+
+.headingContainer {
+display: flex;
+justify-content: center;
+margin-top: 20px;
+}
+
+.countryContainer {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+
+.countryBox {
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .countryBox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+.boxWrapper {
+border-radius: 7px;
+transition: transform 0.3s ease;
+}
+.boxWrapper:hover {
+    transform: scale(1.1);
+}
+
+
+
+.flagBox {
+width: 100px;
+height: 100px;
+overflow: hidden;
+padding-left: 5px;
+transition: transform 0.3s ease;
+}
+.flagBox:hover {
+    transform: scale(1.1);
+}
+
+
+.infoBox {
+margin-top: 5px;
+padding: 5px;
+text-align: center;
+width: 100px;
+border-bottom-left-radius:6px;
+border-bottom-right-radius:6px;
+}
+
+
+.countryName {
+font-weight: bold;
+}
+
+.capitalName {
+margin-top: 5px;
+}
+
+
+/* iPhone SE */
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+
+    body{
+        background-color: #e6f7ff;
+    }
+    .inputField{
+        width: 200px;
+    }
+
+}
+
+/* Samsung Galaxy S8+ */
+@media only screen and (min-width: 668px) and (max-width: 740px) {
+
+    body{
+        background-color: #e6f7ff;
+    }
+    .inputField{
+        width: 200px;
+    }
+
+}
+
+/* iPad Mini */
+@media only screen and (min-width: 741px) and (max-width: 1024px) {
+
+    body{
+        background-color: #ecf0f3;
+    }
+
+}
+
+/* Galaxy Fold */
+@media only screen and (min-width: 280px) and (max-width: 653px) {
+
+    body{
+        background-color: #ecf0f3;
+    }
+    .inputField{
+        width: 200px;
+    }
+    .headingContainer{
+        font-size: 11px;
+    }
+
+}
