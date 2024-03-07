@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
+
 const CurrencyWorld = () => {
   const [currency, setCurrency] = useState('');
   const [countries, setCountries] = useState([]);
   const [flagCodes, setFlagCodes] = useState({});
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     // Fetch flag codes
@@ -18,12 +20,12 @@ const CurrencyWorld = () => {
   }, []);
 
   const handleChange = (event) => {
-    setCurrency(event.target.value);
+    setInputValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`https://restcountries.com/v3.1/currency/${currency}`)
+    fetch(`https://restcountries.com/v3.1/currency/${inputValue}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -32,9 +34,13 @@ const CurrencyWorld = () => {
       })
       .then(data => {
         setCountries(data);
+        setCurrency(inputValue);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
+      })
+      .finally(() => {
+        setInputValue(''); // Reset the input value after fetching data
       });
   };
 
@@ -46,7 +52,7 @@ const CurrencyWorld = () => {
             <input
                 type="text"
                 placeholder="Search By Currency INR, EUR"
-                value={currency}
+                value={inputValue}
                 onChange={handleChange}
                 className="inputField"
             />
